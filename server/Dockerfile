@@ -8,6 +8,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
+# Install axios
+RUN npm install axios
+
 # Copy your app source tree into the working directory
 COPY . .
 
