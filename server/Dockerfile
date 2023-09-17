@@ -1,16 +1,18 @@
-# Node version 20
-FROM node:20
+# Use an official Node.js runtime as the base image
+FROM node:lts-alpine
 
-# Path in the container where the application files will go
+# Create a directory for your app inside the container
 WORKDIR /usr/src/app
 
-# Copy in the package files and install required packages
-COPY app/package*.json ./
+# Copy package files and install required packages
+COPY package*.json ./
 RUN npm install
 
-# Copy our app source tree and the frontend build folder into the working directory
-COPY app/ ./
-COPY build/ ./build/
+# Copy your app source tree into the working directory
+COPY . .
 
-# Command to execute when the container starts
-CMD [ "node", "app.js" ]
+# Expose port (adjust as needed based on your application)
+EXPOSE 8000
+
+# Specify the command to start your application
+CMD ["node", "app.js"]
