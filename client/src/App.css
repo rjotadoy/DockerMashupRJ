@@ -1,0 +1,44 @@
+/* Apply styles to the root container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the main container */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack components on top of each other */
+  justify-content: space-between; /* Distribute space evenly between components */
+  align-items: center; /* Center align components horizontally */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Make the container take up the full viewport height */
+}
+
+/* Style the page counter header */
+.page-counter {
+  width: 100%;
+  padding: 20px;
+  text-align: center; /* Center-align the content */
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc; /* Add a separator line */
+}
+
+/* Style the content container (recipe-search and shopping-list) */
+.content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-grow: 1; /* Let it grow to fill available space */
+}
+
+.recipe-search,
+.shopping-list {
+  flex: 1;
+  padding: 20px;
+  width: 48%;
+}
